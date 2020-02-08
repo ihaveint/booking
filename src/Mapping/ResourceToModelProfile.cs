@@ -9,6 +9,7 @@ namespace Booking.Mapping
         public ResourceToModelProfile()
         {
             CreateMap<SaveSalonResource, Salon>();
+            CreateMap<SaveSeatResource, Seat>();
         }
     }
 }
