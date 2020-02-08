@@ -1,4 +1,5 @@
 using AutoMapper;
+using booking.Repositories;
 using Booking.Repositories;
 using Booking.Services;
 using Microsoft.AspNetCore.Builder;
@@ -30,6 +31,8 @@ namespace Booking
             services.AddControllers();
             services.AddScoped<ISalonRepository, SalonRepository>();
             services.AddScoped<ISalonService, SalonService>();
+            services.AddScoped<ISeatRepository, SeatRepository>();
+            services.AddScoped<ISeatService, SeatService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddAutoMapper(typeof(Startup));
         }
@@ -42,8 +45,6 @@ namespace Booking
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthorization();
@@ -52,6 +53,7 @@ namespace Booking
             {
                 endpoints.MapControllers();
             });
+            
         }
     }
 }
