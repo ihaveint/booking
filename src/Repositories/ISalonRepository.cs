@@ -8,5 +8,6 @@ namespace Booking.Repositories
     {
         Task<IEnumerable<Salon>> ListAsync();
         Task AddAsync(Salon salon);
+        Task<Salon> FindByIdAsync(int id);
     }
 }

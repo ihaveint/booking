@@ -18,5 +18,10 @@ namespace Booking.Repositories
         {
             await _context.salons.AddAsync(salon);
         }
+
+        public async Task<Salon> FindByIdAsync(int id)
+        {
+            return await _context.salons.FindAsync(id);
+        }
     }
 }
