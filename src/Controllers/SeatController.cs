@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Booking.Models;
@@ -42,9 +43,11 @@ namespace Booking.Controllers
         }
         
         [HttpGet]
-        public async Task<IEnumerable<SeatResource>> ListAsync()
+        [Route("{salonId:int}/seats/")]
+        public async Task<IEnumerable<SeatResource>> ListAsync(int salonId)
         {
             var seats = await _seatService.ListAsync();
+            seats = seats.Where(s => s.SalonId == salonId);
             var resources = _mapper.Map<IEnumerable<Seat>, IEnumerable < SeatResource >>(seats);
             
             return resources;
@@ -54,8 +57,9 @@ namespace Booking.Controllers
         [Route("{salonId:int}/seats/")]
         [ProducesResponseType(typeof(SalonResource), 201)]
         [ProducesResponseType(typeof(ErrorResource), 400)]
-        public async Task<IActionResult> PostAsync([FromBody] SaveSeatResource resource)
+        public async Task<IActionResult> PostAsync(int salonId, [FromBody] SaveSeatResource resource)
         {
+            resource.SalonId = salonId;
             var seat = _mapper.Map<SaveSeatResource, Seat>(resource);
             var result = await _seatService.SaveAsync(seat);
             
