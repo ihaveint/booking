@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace urlshortener.Repositories
+namespace Booking.Repositories
 {
     public interface IUnitOfWork
     {

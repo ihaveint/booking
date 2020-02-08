@@ -1,11 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Booking;
 using Booking.Models;
-using Booking.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace booking.Repositories
+namespace Booking.Repositories
 {
     public class SeatRepository : BaseRepository,  ISeatRepository
     {

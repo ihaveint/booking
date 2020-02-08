@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Booking.API.Domain.Services.Communication;
+using Booking.Communication;
 using Booking.Models;
 
 namespace Booking.Services

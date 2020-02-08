@@ -1,4 +1,4 @@
-namespace Booking.API.Domain.Services.Communication
+namespace Booking.Communication
 {
     public abstract class BaseResponse<T>
     {

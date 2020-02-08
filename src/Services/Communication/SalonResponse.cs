@@ -1,6 +1,6 @@
 using Booking.Models;
 
-namespace Booking.API.Domain.Services.Communication
+namespace Booking.Communication
 {
     public class SalonResponse : BaseResponse<Salon>
     {

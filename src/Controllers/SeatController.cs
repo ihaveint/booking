@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Booking.Models;
-using booking.Repositories;
+using Booking.Repositories;
 using Booking.Resources;
 using Booking.Services;
 using Microsoft.AspNetCore.Mvc;

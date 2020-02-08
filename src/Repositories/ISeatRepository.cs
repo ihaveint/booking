@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Booking.Models;
 
-namespace booking.Repositories
+namespace Booking.Repositories
 {
     public interface ISeatRepository
     {

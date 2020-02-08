@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Booking.API.Domain.Services.Communication;
+using Booking.Communication;
 using Booking.Models;
 using Booking.Repositories;
-using urlshortener.Repositories;
 
 namespace Booking.Services
 {

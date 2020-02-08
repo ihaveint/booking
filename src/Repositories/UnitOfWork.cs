@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
-using Booking;
 
-namespace urlshortener.Repositories
+namespace Booking.Repositories
 {
     /*
         we use this class for transaction

@@ -1,5 +1,4 @@
 using AutoMapper;
-using booking.Repositories;
 using Booking.Repositories;
 using Booking.Services;
 using Microsoft.AspNetCore.Builder;
@@ -8,7 +7,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using urlshortener.Repositories;
 
 
 namespace Booking
