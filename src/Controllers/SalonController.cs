@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Booking.Models;
+using Booking.Repositories;
 using Booking.Resources;
 using Booking.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -15,17 +16,18 @@ namespace Booking.Controllers
     public class SalonController : Controller
     {
         private readonly  ISalonService _salonService;
+        private readonly ISalonRepository _salonRepository;
         private readonly IMapper _mapper;
 
-        public SalonController(ISalonService salonService, IMapper mapper)
+        public SalonController(ISalonService salonService, ISalonRepository salonRepository, IMapper mapper)
         {
             _salonService = salonService;
+            _salonRepository = salonRepository;
             _mapper = mapper;
         }
 
 
         [HttpGet]
-
         public async Task<IEnumerable<SalonResource>> ListAsync()
         {
             var salons = await _salonService.ListAsync();
@@ -33,6 +35,19 @@ namespace Booking.Controllers
 
             return resources;
         }
+
+        [HttpGet]
+        [Route("{salonId:int}")]
+        public async Task<IActionResult> Get(int salonId)
+        {
+            var salon = await _salonRepository.FindByIdAsync(salonId);
+            if (salon == null)
+            {
+                return NotFound(new ErrorResource("Salon not found")); 
+            }
+            return Ok(_mapper.Map<Salon, SalonResource>(salon));
+        }
+        
 
         [HttpPost]
         [ProducesResponseType(typeof(SalonResource), 201)]
