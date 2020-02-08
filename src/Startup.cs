@@ -1,14 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq; using System.Threading.Tasks; using Microsoft.AspNetCore.Builder;
+using AutoMapper;
+using Booking.Repositories;
+using Booking.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using urlshortener.Repositories;
 
 
 namespace Booking
@@ -29,6 +28,10 @@ namespace Booking
                 opts.UseNpgsql(Configuration["ConnectionStrings:Booking"]));
 
             services.AddControllers();
+            services.AddScoped<ISalonRepository, SalonRepository>();
+            services.AddScoped<ISalonService, SalonService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
