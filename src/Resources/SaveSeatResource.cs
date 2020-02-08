@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using Booking.Models;
 
 namespace Booking.Resources
 {
@@ -8,7 +7,6 @@ namespace Booking.Resources
         [Required]
         public int Id { get; set; }
         
-        [Required]
         public int SalonId { get; set; }
         
         [Required]
