@@ -55,8 +55,6 @@ namespace Booking.Controllers
 
         [HttpPost]
         [Route("{salonId:int}/seats/")]
-        [ProducesResponseType(typeof(SalonResource), 201)]
-        [ProducesResponseType(typeof(ErrorResource), 400)]
         public async Task<IActionResult> PostAsync(int salonId, [FromBody] SaveSeatResource resource)
         {
             resource.SalonId = salonId;

@@ -47,8 +47,6 @@ namespace Booking.Controllers
         }
         
         [HttpPost]
-        [ProducesResponseType(typeof(SalonResource), 201)]
-        [ProducesResponseType(typeof(ErrorResource), 400)]
         public async Task<IActionResult> PostAsync([FromBody] SaveSalonResource resource)
         {
             var salon = _mapper.Map<SaveSalonResource, Salon>(resource);
