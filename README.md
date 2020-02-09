@@ -32,7 +32,7 @@ dotnet ef database update
       "seatHeight" : {height of each seat (int) } 
   }
 
-  #### create a new show with the given properties
+  #### create a new salon with the given properties
   
   
   ### GET api/v1/salons/:salonId/seats
