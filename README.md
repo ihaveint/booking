@@ -19,7 +19,7 @@ dotnet ef database update
   #### return list of salons created so far 
   
   
-  ### GET api/v1/salons/:salonId
+  ### GET api/v1/salons/salonId
   
   #### return salon with the given id
   
@@ -35,15 +35,15 @@ dotnet ef database update
   #### create a new salon with the given properties
   
   
-  ### GET api/v1/salons/:salonId/seats
+  ### GET api/v1/salons/salonId/seats
   
   #### return lists of all seats in the salon specified with salonId
   
-  ### GET api/v1/salons/:salonId/seats/:seatId
+  ### GET api/v1/salons/salonId/seats/seatId
 
   #### return the seat with the given seatId (which should belong to the given salon, otherwise, return BadRequest)
   
-  ### POST api/v1/salons/:salonId/seats
+  ### POST api/v1/salons/salonId/seats
   
   json 
     {
@@ -51,7 +51,7 @@ dotnet ef database update
         "Y" : {position of the seat in y direction (int)} 
     }
     
-  #### Add a new seat which belongs to the given salon 
+  #### Create a new seat which belongs to the given salon 
   
 ```
 
