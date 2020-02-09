@@ -4,7 +4,6 @@ namespace Booking.Communication
 {
     public class SeatResponse : BaseResponse<Seat>
     {
-        
         public SeatResponse(Seat resource) : base(resource)
         {
         }

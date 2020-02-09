@@ -4,7 +4,6 @@ namespace Booking.Resources
 {
     public class SaveSalonResource
     {
-        
         [Required]
         public int Id { get; set; }
         

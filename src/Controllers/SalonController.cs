@@ -24,8 +24,7 @@ namespace Booking.Controllers
             _salonRepository = salonRepository;
             _mapper = mapper;
         }
-
-
+        
         [HttpGet]
         public async Task<IEnumerable<SalonResource>> ListAsync()
         {
@@ -47,7 +46,6 @@ namespace Booking.Controllers
             return Ok(_mapper.Map<Salon, SalonResource>(salon));
         }
         
-
         [HttpPost]
         [ProducesResponseType(typeof(SalonResource), 201)]
         [ProducesResponseType(typeof(ErrorResource), 400)]

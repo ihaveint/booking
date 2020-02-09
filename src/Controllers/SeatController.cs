@@ -71,7 +71,5 @@ namespace Booking.Controllers
             var seatResource = _mapper.Map<Seat, SeatResource>(result.Resource);
             return Ok(seatResource);
         }
-        
-        
     }
 }
