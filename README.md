@@ -78,7 +78,9 @@ curl -i localhost:5000/api/v1/salons/:salonId/seats/:seatId
 ### 6 : creating a new seat
 For this purpose you need to send a post request to server and receive a json (representing properties of created seat) 
 (in json format , containing key/values for "X" -> x position of seat in integer , "seatWidth" -> y position of seat in integer)
+```
 curl -i -d '{"X" : integer , "Y" : integer }' -H "Content-Type: application/json" -X POST http://localhost:5000/api/v1/salons/:salonId/seats
+```
 
 ## Built With 
 
