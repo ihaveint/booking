@@ -34,8 +34,7 @@ namespace Booking.Controllers
             return resources;
         }
 
-        [HttpGet]
-        [Route("{salonId:int}")]
+        [HttpGet("{salonId:int}")]
         public async Task<IActionResult> Get(int salonId)
         {
             var salon = await _salonRepository.FindByIdAsync(salonId);

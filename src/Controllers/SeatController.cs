@@ -26,8 +26,7 @@ namespace Booking.Controllers
             _mapper = mapper;
         }
         
-        [HttpGet]
-        [Route("{salonId:int}/seats/{seatId:int}")]
+        [HttpGet("{salonId:int}/seats/{seatId:int}")]
         public async Task<IActionResult> Get(int salonId, int seatId)
         {
             var seat = await _seatRepository.FindByIdAsync(seatId);
@@ -42,8 +41,7 @@ namespace Booking.Controllers
             return Ok(_mapper.Map<Seat, SeatResource>(seat));
         }
         
-        [HttpGet]
-        [Route("{salonId:int}/seats/")]
+        [HttpGet("{salonId:int}/seats/")]
         public async Task<IEnumerable<SeatResource>> ListAsync(int salonId)
         {
             var seats = await _seatService.ListAsync();
@@ -53,8 +51,7 @@ namespace Booking.Controllers
             return resources;
         }
 
-        [HttpPost]
-        [Route("{salonId:int}/seats/")]
+        [HttpPost("{salonId:int}/seats/")]
         public async Task<IActionResult> PostAsync(int salonId, [FromBody] SaveSeatResource resource)
         {
             resource.SalonId = salonId;

@@ -3,7 +3,7 @@
 
 ### Getting Started
 
-This is a .Net Core project that works as a web server on the localhost, It let you send Http request to the server and receive a proper response.
+This is a .Net Core project that works as a web server on the localhost, It lets you send Http request to the server and receive a proper response.
 
 ### Prerequisites
 
